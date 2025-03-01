@@ -1,0 +1,4 @@
+name: SignIn
+version: '${project.version}'
+main: sudark.signin.SignIn
+api-version: '1.21'
