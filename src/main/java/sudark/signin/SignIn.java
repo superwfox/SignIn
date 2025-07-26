@@ -52,7 +52,10 @@ public final class SignIn extends JavaPlugin {
             if (block != null && block.getType() == Material.NOTE_BLOCK) {
                 Player pl = event.getPlayer();
                 int clickTime = 1;
-                if (block.getWorld().equals(Bukkit.getWorld("BEEF-Main"))) {
+                Location bl = event.getClickedBlock().getLocation();
+                int x = bl.getBlockX();
+                int z = bl.getBlockZ();
+                if (Math.abs(x) < 100 && Math.abs(z) < 100) {
                     int signTurn = pl.getScoreboard().getObjective("sign").getScore(pl).getScore();
                     if (signTurn > 1) {
                         pl.sendTitle("[§e SIGN §f]", "§7今天已经签到过了");
